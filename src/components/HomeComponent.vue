@@ -1,66 +1,55 @@
 <template>
   <v-container>
-    <v-row class="text-center mt-2 mx-auto">
-      <v-col cols="8">
+    <v-row class="text-center picture">
+      <v-col cols="12" md="8" sm="6" class="main-green picture-column">
+        <v-img :src="require('../assets/tributeimg_opt.png')" contain height="200" id="rounded" />
+      </v-col>
+    </v-row>
+    <v-row class="text-center name">
+      <v-col cols="12" md="8" sm="6">
         <div class="mx-auto">
-          <h1 class="display-3 font-weight-bold mt-5">Jimmy Vanetta</h1>
-          <v-divider></v-divider>
-          <h2 class="display-1">Full-Stack Developer</h2>
+          <h1 class="display-2 font-weight-bold">Jimmy Vanetta</h1>
+          <h2>Full-Stack Developer</h2>
           <v-carousel continuous :cycle="cycle" :show-arrows="false" hide-delimiter-background hide-delimiters
-            delimiter-icon="mdi-minus" height="100" class="mx-auto carousel">
+            delimiter-icon="mdi-minus" height="100" class="mx-auto my-auto carousel">
             <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              <v-sheet :color="slideColors[i]" height="50" tile>
+              <v-sheet :color="slideColors[i]" height="175" tile>
                 <v-row class="fill-height" align="center" justify="center">
-                  <div class="text-h5 slide-text">
+                  <v-col cols="12" class="text-p">
                     <v-icon>{{ slideIcons[i] }}</v-icon> {{ slide }}
-                  </div>
+                  </v-col>
                 </v-row>
               </v-sheet>
             </v-carousel-item>
           </v-carousel>
         </div>
       </v-col>
-      <v-col cols="4">
-        <div class="mx-auto">
-          <v-img :src="require('../assets/tributeimg_opt.png')" class="my-3" contain height="200" id="rounded" />
-        </div>
+    </v-row>
+    <v-row class="text-center about">
+      <v-col cols="12" md="8" sm="6">
+        <h2 class="display-1 font-weight-bold">I love computers and technology!</h2>
+        <p>I have an insatiable thirst for knowledge and an unwavering passion for computers and technology.
+          As I navigate through the ever-evolving world, I find myself constantly seeking to understand its intricate
+          workings.
+          My career aspiration as a Software Developer is driven by my desire to be part of a vibrant team that thrives
+          on innovation and embraces new techniques and technologies.
+          With an inherent curiosity and a commitment to lifelong learning,
+          I eagerly anticipate the opportunity to contribute to an environment that fosters continuous growth and
+          development. Visit the contact me section to drop me a line!</p>
       </v-col>
     </v-row>
-    <v-row>
-      <div class="about-me text-center">
-        <v-col cols="12">
-          <h2 class="display-2 about-title">About Me</h2>
-          <p>I have an insatiable thirst for knowledge and an unwavering passion for computers and technology.
-            As I navigate through the ever-evolving world, I find myself constantly seeking to understand its intricate
-            workings.
-            My career aspiration as a Software Developer is driven by my desire to be part of a vibrant team that thrives
-            on innovation and embraces new techniques and technologies.
-            With an inherent curiosity and a commitment to lifelong learning,
-            I eagerly anticipate the opportunity to contribute to an environment that fosters continuous growth and
-            development.</p>
-        </v-col>
-      </div>
-    </v-row>
-    <v-row>
-      <div class="skills">
-        <v-col cols="12">
-          <div class="skills-title-container">
-            <h2 class="display-2 skills-title">Skills</h2>
-          </div>
-          <v-divider></v-divider>
-          <div class="skills-subtitle-container">
-            <h3 class="skills-subtitle">.NET</h3>
-          </div>
-          <p class="skills-p">
-            My main area of expertise is within the .NET Framework with C# as my main programming language.
-            I have been acredited as a full-stack developer by Tech Elevator, an intense 14-week development bootcamp.
-            All of my back-end work is done in .NET.
+    <v-row class="skills">
+        <v-col cols="12" md="8" sm="6">
+          <h2 class="display-1 font-weight-bold">Modern Frameworks for Modern Solutions</h2>
+          <p>
+            Mordern SPA Frameworks are the way to go. I like to couple these with Entity Framework and .NET Framework for fast and seamless solutions.
           </p>
         </v-col>
-      </div>
     </v-row>
     <v-row>
-      test
+      <v-col cols="12" class="text-center">
+
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -99,8 +88,10 @@ export default Vue.extend({
 .container {
   max-height: 100%;
   height: 100%;
-  max-width: 75%;
-  background-color: #78BC61;
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+  background-color: #19E68C;
 }
 
 .carousel {
@@ -108,44 +99,41 @@ export default Vue.extend({
   width: 100%;
 }
 
-.slide-text {
-  color: #F0EFF4;
+.picture {
+  background-color: #19E68C;
+  max-height: 250px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .picture-column {
+    margin-top: 2rem
+  }
 }
 
-.about-title {
-  margin-left: 2rem;
+.name {
+  margin-top: 0;
+  background-color: #19E68C;
+  max-height: 250px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-me {
-  margin-left: 2rem;
-  margin-right: 2rem;
+.about {
+  max-height: 375px;
+  height: 100%;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
 }
 
 .skills {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.skills-title {
-  float: right;
-  margin-right: 2rem;
-  display: block;
-  position: relative;
-}
-
-.skills-title-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.skills-subtitle-container {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.row:nth-child(even) {
-   background-color: #131200;
+  max-height: 500px;
+  height: 500px;
+  background-color: #272727;
+  color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
 }
 </style>

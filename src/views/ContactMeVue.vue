@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an contact page</h1>
-  </div>
+  <ContactMe />
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import ContactMe from '@/components/ContactMeComponent.vue';
+
+  export default Vue.extend({
+    components: {
+      ContactMe
+    }
+    
+  })
+</script>
+
+<style lang="scss" scoped>
+
+</style>
