@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="text-center picture">
-      <v-col cols="12" md="8" sm="6" class="main-green picture-column">
+      <v-col cols="12" md="8" sm="6" class="picture-column">
         <v-img :src="require('../assets/tributeimg_opt.png')" contain height="200" id="rounded" />
       </v-col>
     </v-row>
@@ -11,7 +11,7 @@
           <h1 class="display-2 font-weight-bold">Jimmy Vanetta</h1>
           <h2>Full-Stack Developer</h2>
           <v-carousel continuous :cycle="cycle" :show-arrows="false" hide-delimiter-background hide-delimiters
-            delimiter-icon="mdi-minus" height="100" class="mx-auto my-auto carousel">
+            height="100" class="carousel">
             <v-carousel-item v-for="(slide, i) in slides" :key="i">
               <v-sheet :color="slideColors[i]" height="175" tile>
                 <v-row class="fill-height" align="center" justify="center">
@@ -28,27 +28,21 @@
     <v-row class="text-center about">
       <v-col cols="12" md="8" sm="6">
         <h2 class="display-1 font-weight-bold">I love computers and technology!</h2>
-        <p>I have an insatiable thirst for knowledge and an unwavering passion for computers and technology.
-          As I navigate through the ever-evolving world, I find myself constantly seeking to understand its intricate
-          workings.
-          My career aspiration as a Software Developer is driven by my desire to be part of a vibrant team that thrives
-          on innovation and embraces new techniques and technologies.
-          With an inherent curiosity and a commitment to lifelong learning,
-          I eagerly anticipate the opportunity to contribute to an environment that fosters continuous growth and
-          development. Visit the contact me section to drop me a line!</p>
+        <p>I'm always thirsty for knowledge and totally obsessed with computers and tech! As I navigate through this ever-changing world, I'm constantly geeking out over its intricate workings. 
+          Being a Software Developer is my dream job because I want to be part of a kick-ass team that's all about innovation and embracing the latest techniques and technologies. 
+          With my insatiable curiosity and a commitment to lifelong learning, I'm stoked to contribute to an environment that's all about growth and development. Hit up the contact me section and let's chat!</p>
       </v-col>
     </v-row>
-    <v-row class="skills">
-        <v-col cols="12" md="8" sm="6">
-          <h2 class="display-1 font-weight-bold">Modern Frameworks for Modern Solutions</h2>
-          <p>
-            Mordern SPA Frameworks are the way to go. I like to couple these with Entity Framework and .NET Framework for fast and seamless solutions.
-          </p>
-        </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12" class="text-center">
-
+    <v-row class="skills text-center">
+      <v-col cols="12" md="8" sm="6">
+        <h2 class="display-1 font-weight-bold">Modern Frameworks for Modern Solutions</h2>
+        <p>
+          Modern SPA frameworks have become the preferred choice for developing web applications. Their versatility and capabilities make them highly sought after by developers. 
+          When combined with other powerful tools like Entity Framework and .NET Framework, these frameworks can deliver fast and seamless solutions. 
+          Entity Framework simplifies data access and provides an object-relational mapping (ORM) solution, making it easier to work with databases. 
+          On the other hand, .NET Framework offers a robust and comprehensive development platform, allowing developers to build efficient and scalable applications. 
+          By leveraging the strengths of these frameworks together, developers can create compelling and high-performing web applications with ease.
+        </p>
       </v-col>
     </v-row>
   </v-container>
@@ -93,7 +87,6 @@ export default Vue.extend({
   padding: 0;
   background-color: #19E68C;
 }
-
 .carousel {
   max-width: 100%;
   width: 100%;
@@ -105,16 +98,12 @@ export default Vue.extend({
   height: 100%;
   align-items: center;
   justify-content: center;
-
-  .picture-column {
-    margin-top: 2rem
-  }
 }
 
 .name {
   margin-top: 0;
   background-color: #19E68C;
-  max-height: 250px;
+  max-height: 262px;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -129,8 +118,8 @@ export default Vue.extend({
 }
 
 .skills {
-  max-height: 500px;
-  height: 500px;
+  max-height: 550px;
+  height: 550px;
   background-color: #272727;
   color: #FFFFFF;
   align-items: center;

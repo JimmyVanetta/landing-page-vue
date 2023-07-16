@@ -14,7 +14,9 @@
     </v-app-bar>
 
     <v-main>
-      <router-view />
+      <v-slide-x-transition>
+        <router-view />
+      </v-slide-x-transition>
     </v-main>
 
     <v-footer padless dark app elevation="0">
@@ -25,7 +27,7 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -39,6 +41,3 @@ export default Vue.extend({
 
 });
 </script>
-
-<style lang="scss">
-</style>
