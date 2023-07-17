@@ -8,20 +8,21 @@
                 </p>
             </v-col>
         </v-row>
-        <v-row class="text-center bottom mt-5">
+        <v-row class="text-center bottom mb-5">
             <v-col cols="6" md="4" sm="4">
                 <v-form ref="form" v-model="valid" lazy-validation>
-                    <v-text-field type="email" name="_replyto" v-model="email" label="Your email..." dense outlined
+                    <v-text-field type="email" name="_replyto" v-model="name" label="Your name..." dense outlined clearable
+                        :rules="nameRules" />
+                    <v-text-field type="email" name="_replyto" v-model="email" label="Your email..." dense outlined clearable
                         :rules="emailRules" />
-                    <v-textarea name="message" v-model="message" label="Your message..." dense outlined
+                    <v-textarea name="message" v-model="message" label="Your message..." dense outlined clearable
                         :rules="messageRules"></v-textarea>
                 </v-form>
-                <v-btn @click="postNow" :disabled="!valid">Send</v-btn>
+                <v-btn @click="postNow" :disabled="!valid" color="primary">Send</v-btn>
             </v-col>
         </v-row>
         <v-snackbar v-model="snackbar">
             {{ text }}
-
             <template v-slot:action="{ attrs }">
                 <v-btn color="pink" text v-bind="attrs" @click="snackbar = false">
                     Close
@@ -40,7 +41,8 @@ export default Vue.extend({
 
     data: () => ({
         snackbar: false,
-        valid: false,
+        valid: true,
+        name: '',
         email: '',
         message: '',
         text: '',
@@ -51,13 +53,17 @@ export default Vue.extend({
         messageRules: [
             v => !!v || 'Message is required'
         ],
+        nameRules: [
+            v => !!v || 'Name is required',
+        ],
     }),
     methods: {
         async postNow() {
-            if (this.email && this.message) {
+            if (this.email && this.message && this.name) {
                 const link = "https://formspree.io/f/mleyelee"
                 var data = new FormData();
                 data.append('_replyto', this.email)
+                data.append('name', this.name)
                 data.append('message', this.message)
 
                 axios.post(link, data, {
@@ -65,14 +71,13 @@ export default Vue.extend({
                         'Accept': 'application/json',
                     },
                 }).then((response) => {
-                    this.email = "";
-                    this.message = "";
+                    this.$refs.form.reset();
                 }).catch((error) => {
                     console.log(error)
                 });
             } else {
                 this.snackbar = true;
-                this.text = 'You must enter a valid email and a message!'
+                this.text = 'You must enter a name, a valid email and a message!'
             }
         }
     }
@@ -97,7 +102,7 @@ export default Vue.extend({
 }
 
 .bottom {
-    max-height: 300px;
+    max-height: 450px;
     height: 100%;
     align-items: center;
     justify-content: center;
