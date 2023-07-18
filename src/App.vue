@@ -41,3 +41,9 @@ export default Vue.extend({
 
 });
 </script>
+
+<style lang="scss">
+::-webkit-scrollbar {
+  width: 0px;
+}
+</style>
