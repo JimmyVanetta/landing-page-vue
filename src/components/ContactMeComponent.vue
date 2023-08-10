@@ -13,8 +13,8 @@
                 <v-form ref="form" v-model="valid" lazy-validation>
                     <v-text-field type="email" name="_replyto" v-model="name" label="Your name..." dense outlined clearable
                         :rules="nameRules" />
-                    <v-text-field type="email" name="_replyto" v-model="email" label="Your email..." dense outlined clearable
-                        :rules="emailRules" />
+                    <v-text-field type="email" name="_replyto" v-model="email" label="Your email..." dense outlined
+                        clearable :rules="emailRules" />
                     <v-textarea name="message" v-model="message" label="Your message..." dense outlined clearable
                         :rules="messageRules"></v-textarea>
                 </v-form>
@@ -47,14 +47,14 @@ export default Vue.extend({
         message: '',
         text: '',
         emailRules: [
-            v => !!v || 'E-mail is required',
-            v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+            (v: string) => !!v || 'E-mail is required',
+            (v: string) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
         ],
         messageRules: [
-            v => !!v || 'Message is required'
+            (v: string) => !!v || 'Message is required'
         ],
         nameRules: [
-            v => !!v || 'Name is required',
+            (v: string) => !!v || 'Name is required',
         ],
     }),
     methods: {

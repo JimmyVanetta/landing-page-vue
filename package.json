@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vue/composition-api": "^1.7.1",
+    "aos": "^2.3.4",
     "core-js": "^3.8.3",
     "redaxios": "^0.5.1",
     "vue": "^2.6.14",

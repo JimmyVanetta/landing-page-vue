@@ -74,7 +74,7 @@ export default Vue.extend({
       'Vue',
     ],
     cycle: true,
-  }),
+  })
 })
 </script>
 
