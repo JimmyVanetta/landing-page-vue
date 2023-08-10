@@ -7,6 +7,7 @@
       <template v-slot:extension>
         <v-tabs align-with-title>
           <v-tab to="/home">Home</v-tab>
+          <v-tab to="/games">Games</v-tab>
           <v-tab to="/contact">Contact Me</v-tab>
         </v-tabs>
       </template>
@@ -41,3 +42,9 @@ export default Vue.extend({
 
 });
 </script>
+
+<style lang="scss">
+::-webkit-scrollbar {
+  width: 0px;
+}
+</style>
