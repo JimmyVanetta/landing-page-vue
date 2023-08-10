@@ -2,9 +2,8 @@
     <v-container>
         <v-row justify="center">
             <h1>Fighting Game</h1>
-            <v-col cols="12">
-                <canvas></canvas>
-            </v-col>
+            <h3>Under Construction</h3>
+                <!-- <canvas></canvas> -->
         </v-row>
     </v-container>
 </template>
@@ -19,9 +18,30 @@ export default Vue.extend({
         // set up canvas
         var canvas = document.querySelector('canvas')
         var c = canvas.getContext("2d");
+        canvas.width = 1024
+        canvas.height = 576
 
         c.fillStyle = "black";
         c.fillRect(0, 0, canvas.width, canvas.height);
+
+        class Sprite {
+            constructor(position) {
+                this.position = position
+            }
+
+            draw() {
+                c.fillStyle = 'red'
+                c.fillRect(this.position.x, this.position.y, 50, 150)
+            }
+        }
+
+        const player = new Sprite({
+            x: 0,
+            y: 0
+        })
+
+        console.log(player)
+        player.draw()
     }
 })
 </script>
