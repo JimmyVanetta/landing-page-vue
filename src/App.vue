@@ -47,4 +47,12 @@ export default Vue.extend({
 ::-webkit-scrollbar {
   width: 0px;
 }
+
+.container {
+    max-height: 100%;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+}
 </style>

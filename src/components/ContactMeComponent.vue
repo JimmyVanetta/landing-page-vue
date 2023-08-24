@@ -37,7 +37,7 @@ import Vue from 'vue'
 import axios from 'redaxios'
 
 export default Vue.extend({
-    name: 'ContactMe',
+    name: 'ContactMeComponent',
 
     data: () => ({
         snackbar: false,
@@ -85,14 +85,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.container {
-    max-height: 100%;
-    height: 100%;
-    max-width: 100%;
-    width: 100%;
-    padding: 0;
-}
-
 .top {
     max-height: 500px;
     height: 100%;

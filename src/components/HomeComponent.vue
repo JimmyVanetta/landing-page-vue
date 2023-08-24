@@ -52,7 +52,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'HelloWorld',
+  name: 'HomeComponent',
 
   data: () => ({
     slideColors: [
@@ -79,14 +79,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.container {
-  max-height: 100%;
-  height: 100%;
-  max-width: 100%;
-  width: 100%;
-  padding: 0;
-  background-color: #19E68C;
-}
 .carousel {
   max-width: 100%;
   width: 100%;
